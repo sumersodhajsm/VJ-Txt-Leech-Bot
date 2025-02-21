@@ -210,14 +210,7 @@ async def upload(bot: Client, m: Message):
 
     except Exception as e:
         await m.reply_text(e)
-    await m.reply_text("**📤𝐔𝐏𝐋𝐎𝐀𝐃𝐈𝐍𝐆 𝐂𝐎𝐌𝐏𝐋𝐄𝐓𝐄𝐃 ✅
-━━━━━━━━━━━━━━━━━━━
-
-📚 COURSE : {raw_text0}
-
-━━━━━━━━━━━━━━━━━━━
-🎉 Your task has been successfully completed!
-━━━━━━━━━━━━━━━━━━━\n\n✰🅓ơɳɛ✰ 📍📍**")
+    await m.reply_text("**✰🅓ơɳɛ✰ 📍📍**")
 
 
 bot.run()
