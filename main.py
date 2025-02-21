@@ -35,7 +35,7 @@ bot = Client(
 
 @bot.on_message(filters.command(["start"]))
 async def start(bot: Client, m: Message):
-    await m.reply_text(f"<b>======= 🤖 WELCOME TO TXT UPLOADER ======= {m.from_user.mention} 👋\n\n I Am A Bot For Download Links From Your **.TXT** File And Then Upload That File On Telegram So Basically If You Want To Use Me First Send Me /crtxt Command And Then Follow Few Steps..\n\nUse /restart to stop any ongoing task.</b>")
+    await m.reply_text(f"<b>======= 🤖 WELCOME TO TXT UPLOADER =======\n\n Hey{m.from_user.mention} 👋\n\n I Am A Bot For Download Links From Your **.TXT** File And Then Upload That File On Telegram So Basically If You Want To Use Me First Send Me /crtxt Command And Then Follow Few Steps..\n\nUse /stop to stop any ongoing task.\n\n Developed Bye ᴹᴿ°᭄ᴄ͢͢͢ʀɪᴍɪɴᴀʟ࿐™💥</b>")
 
 
 @bot.on_message(filters.command("stop"))
@@ -193,7 +193,7 @@ async def upload(bot: Client, m: Message):
                         time.sleep(e.x)
                         continue
                 else:
-                    Show = f"**📥 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐈𝐍𝐆 📥... »**\n\n**📝Name »** `{name}\n❄Quality » {raw_text2}`\n\n**🔗URL »** `{url}`"
+                    Show = f"**📥 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐈𝐍𝐆 📥... »**\n\n**📝Name »** `{name}\n❄Quality » {raw_text2}`\n\n**🔗URL »** `{ᴹᴿ°᭄ᴄ͢͢͢ʀɪᴍɪɴᴀʟ࿐™}`"
                     prog = await m.reply_text(Show)
                     res_file = await helper.download_video(url, cmd, name)
                     filename = res_file
@@ -210,7 +210,14 @@ async def upload(bot: Client, m: Message):
 
     except Exception as e:
         await m.reply_text(e)
-    await m.reply_text("**list index out of range 🔰 Sᴜᴄᴄᴇsғᴜʟʟʏ Dᴏᴡɴʟᴏᴀᴅᴇᴅ Aʟʟ Lᴇᴄᴛᴜʀᴇs...! 🔰**")
+    await m.reply_text("**📤𝐔𝐏𝐋𝐎𝐀𝐃𝐈𝐍𝐆 𝐂𝐎𝐌𝐏𝐋𝐄𝐓𝐄𝐃 ✅
+━━━━━━━━━━━━━━━━━━━
+
+📚 COURSE : {raw_text0}
+
+━━━━━━━━━━━━━━━━━━━
+🎉 Your task has been successfully completed!
+━━━━━━━━━━━━━━━━━━━\n\n✰🅓ơɳɛ✰ 📍📍**")
 
 
 bot.run()
