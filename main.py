@@ -211,6 +211,51 @@ async def upload(bot: Client, m: Message):
     except Exception as e:
         await m.reply_text(e)
     await m.reply_text("**✰🅓ơɳɛ✰ 📍📍**")
+from telegram import Update
+from telegram.ext import Updater, CommandHandler, CallbackContext
+
+# Define the /kp command handler
+def kp(update: Update, context: CallbackContext) -> None:
+    # Define the message to be sent when /kp is called
+    message = """======= 🤖 WELCOME TO TXT UPLOADER =======
+
+Heyεѵεℓყɳ 👋
+
+I Am A Bot For Download Links From Your .TXT File And Then Upload That File On Telegram So Basically If You Want To Use Me First Send Me /crtxt Command And Then Follow Few Steps..
+
+Use /stop to stop any ongoing task.
+
+Developed Bye ᴹᴿ°᭄ᴄ‌‌‌ʀɪᴍɪɴᴀʟ࿐™💥"""
+    
+    # Send the message to the user
+    update.message.reply_text(message)
+
+# Define the /start command handler (optional, just to greet the user)
+def start(update: Update, context: CallbackContext) -> None:
+    update.message.reply_text("Hello! Use /kp to see the instructions.")
+
+def main() -> None:
+    # Use your bot's token here
+    bot_token = 'YOUR_BOT_TOKEN'
+
+    # Create the Updater object and attach the dispatcher to handle commands
+    updater = Updater(bot_token)
+
+    # Get the dispatcher to register the handlers
+    dispatcher = updater.dispatcher
+
+    # Register the command handlers
+    dispatcher.add_handler(CommandHandler('kp', kp))
+    dispatcher.add_handler(CommandHandler('start', start))
+
+    # Start the bot
+    updater.start_polling()
+
+    # Run the bot until you stop it
+    updater.idle()
+
+if name == 'main':
+    main()
 
 
 bot.run()
