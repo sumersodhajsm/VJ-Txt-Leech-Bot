@@ -211,6 +211,7 @@ async def upload(bot: Client, m: Message):
     except Exception as e:
         await m.reply_text(e)
     await m.reply_text("**✰🅓ơɳɛ✰ 📍📍**")
+@bot.on_message(filters.command(["kp"]))
 
 
 bot.run()
