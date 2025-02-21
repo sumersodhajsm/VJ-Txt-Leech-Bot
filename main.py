@@ -213,5 +213,4 @@ async def upload(bot: Client, m: Message):
     await m.reply_text("**list index out of range 🔰 Sᴜᴄᴄᴇsғᴜʟʟʏ Dᴏᴡɴʟᴏᴀᴅᴇᴅ Aʟʟ Lᴇᴄᴛᴜʀᴇs...! 🔰**")
 
 
-
 bot.run()
