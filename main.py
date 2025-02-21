@@ -267,28 +267,7 @@ def handle_file(update: Update, context: CallbackContext) -> None:
         else:
             update.message.reply_text("Please send a .txt file.")
     else:
-        update.message.reply_text("Please send a .txt file to convert.")
-
-# Main function to start the bot
-def main() -> None:
-    # Use your own bot token here
-    token = "YOUR_BOT_API_KEY"
-    
-    # Create the Updater object and set up the dispatcher
-    updater = Updater(token)
-    dispatcher = updater.dispatcher
-    
-    # Register a message handler to handle file uploads
-    dispatcher.add_handler(MessageHandler(Filters.document.mime_type("text/plain"), handle_file))
-    
-    # Start the bot
-    updater.start_polling()
-    
-    # Run the bot until you manually stop it
-    updater.idle()
-
-if name == 'main':
-    main()
+        update.message.reply_text("Please send a .txt file to conver.")
 
                 
 bot.run()
