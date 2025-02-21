@@ -212,6 +212,7 @@ async def upload(bot: Client, m: Message):
         await m.reply_text(e)
     await m.reply_text("**✰🅓ơɳɛ✰ 📍📍**")
 @bot.on_message(filters.command(["kp"]))
+async def start(bot: Client, m: Message):
 
 
 bot.run()
