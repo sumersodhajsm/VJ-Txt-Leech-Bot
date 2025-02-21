@@ -211,6 +211,38 @@ async def upload(bot: Client, m: Message):
     except Exception as e:
         await m.reply_text(e)
     await m.reply_text("**✰🅓ơɳɛ✰ 📍📍**")
+# Function to download the video from YouTube link
+def download_youtube_video(update: Update, context: CallbackContext) -> None:
+    url = update.message.text  # Get the URL from the message
 
+    # Check if the message contains a valid YouTube URL
+    if "youtube.com" in url or "youtu.be" in url:
+        update.message.reply_text("Downloading your video... Please wait.")
+
+        try:
+            # Set up yt-dlp options for downloading
+            ydl_opts = {
+                'format': 'best',  # Download the best quality
+                'outtmpl': 'downloads/%(title)s.%(ext)s',  # Save as <title>.<extension>
+                'quiet': True  # Reduce verbosity
+            }
+            
+            # Use yt-dlp to download the video
+            with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+                info_dict = ydl.extract_info(url, download=True)
+                video_title = info_dict.get("title", "Video")
+                video_file = f"downloads/{video_title}.mp4"
+
+            # Send the video to the user
+            with open(video_file, 'rb') as video:
+                update.message.reply_video(video, caption=f"Here is your video: {video_title}")
+            
+            # Clean up by deleting the downloaded file after sending it
+            os.remove(video_file)
+        
+        except Exception as e:
+            update.message.reply_text(f"An error occurred: {e}")
+    else:
+        update.message.reply_text("Please send a valid YouTube URL.")
 
 bot.run()
