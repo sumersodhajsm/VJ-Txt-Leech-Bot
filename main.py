@@ -35,7 +35,7 @@ bot = Client(
 
 @bot.on_message(filters.command(["start"]))
 async def start(bot: Client, m: Message):
-    await m.reply_text(f"<b>======= 🤖 WELCOME TO TXT UPLOADER =======\n\n Hey{m.from_user.mention} 👋\n\n I Am A Bot For Download Links From Your **.TXT** File And Then Upload That File On Telegram So Basically If You Want To Use Me First Send Me /crtxt Command And Then Follow Few Steps..\n\nUse /stop to stop any ongoing task.\n\n Developed Bye ᴹᴿ°᭄ᴄ͢͢͢ʀɪᴍɪɴᴀʟ࿐™💥</b>")
+    await m.reply_text(f"<b>======= 🤖 WELCOME TO TXT UPLOADER =======\n\n Hey{m.from_user.mention} 👋\n\n I Am A Bot For Download Links From Your **.TXT** File And Then Upload That File On Telegram So Basically If You Want To Use Me First Send Me /txt Command And Then Follow Few Steps..\n\nUse /stop to stop any ongoing task.\n\n Developed Bye εѵεℓყɳ💥</b>")
 
 
 @bot.on_message(filters.command("stop"))
@@ -45,7 +45,7 @@ async def restart_handler(_, m):
 
 
 
-@bot.on_message(filters.command(["crtxt"]))
+@bot.on_message(filters.command(["txt"]))
 async def upload(bot: Client, m: Message):
     editable = await m.reply_text('➠ 𝐒𝐞𝐧𝐝 𝐌𝐞 𝐘𝐨𝐮𝐫 𝐓𝐗𝐓 𝐅𝐢𝐥𝐞 𝐢𝐧 𝐀 𝐏𝐫𝐨𝐩𝐞𝐫 𝐖𝐚𝐲  ⚡️')
     input: Message = await bot.listen(editable.chat.id)
